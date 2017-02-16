@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cricket3"
+    tools:context="com.example.android.cricketscorekeeper.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/Linearlayout_vertical_center">
+
+            <TextView
+                style="@style/textview_team_name"
+                android:text="@string/player_name_a" />
+
+            <TextView
+                android:id="@+id/team_india_score"
+                style="@style/score_theme"
+                android:text="0" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addOneForIndia"
+                android:text="@string/one_point" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addFourForIndia"
+                android:text="@string/four_point" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addSixForInida"
+                android:text="@string/six_point" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/team_india_wickets"
+                    style="@style/score_small_theme"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/team_india_over"
+                    style="@style/score_small_theme.left"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Linearlayout_center_horizontal">
+
+                <Button
+                    style="@style/bellow_button_theme"
+                    android:onClick="setWicketTeamIndia"
+                    android:text="@string/Wickets" />
+
+                <Button
+                    style="@style/bellow_button_theme"
+                    android:onClick="setOverTeamIndia"
+                    android:text="@string/Over" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray">
+
+        </View>
+
+        <LinearLayout style="@style/Linearlayout_vertical_center">
+
+            <TextView
+                style="@style/textview_team_name"
+                android:text="@string/player_name_b" />
+
+            <TextView
+                android:id="@+id/team_australia_score"
+                style="@style/score_theme"
+                android:text="0" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addOneForAustralia"
+                android:text="@string/one_point" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addFourForAustralia"
+                android:text="@string/four_point" />
+
+            <Button
+                style="@style/central_button_theme"
+                android:onClick="addSixForAustralia"
+                android:text="@string/six_point" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/team_australia_wickets"
+                    style="@style/score_small_theme"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/team_australia_over"
+                    style="@style/score_small_theme.left"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Linearlayout_center_horizontal">
+
+                <Button
+                    style="@style/bellow_button_theme"
+                    android:onClick="wicketTeamAustralia"
+                    android:text="@string/Wickets" />
+
+                <Button
+                    style="@style/bellow_button_theme"
+                    android:onClick="overTeamAustralia"
+                    android:text="@string/Wickets" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/reset_button_theme"
+        android:onClick="resetScore"
+        android:text="@string/Reset" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Cricket Score Keeper</string>
+    <string name="player_name_a">India</string>
+    <string name="player_name_b">Australia</string>
+    <string name="one_point">+1 points</string>
+    <string name="four_point">+4 points</string>
+    <string name="six_point">+6 points</string>
+    <string name="Wickets">Wickets</string>
+    <string name="Over">Over</string>
+    <string name="Reset">Reset</string>
+
+</resources>
