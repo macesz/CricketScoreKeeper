@@ -11,28 +11,57 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Tracks the score for India.
      */
-    int scoreTeamIndia = 0;
-    int wicketTeamIndia = 0;
-    int overTeamIndia = 0;
+      private   int scoreTeamIndia = 0;
+      private   int wicketTeamIndia = 0;
+      private   int overTeamIndia = 0;
 
     /**
      * Tracks the score for Australia.
      */
-    int scoreTeamAustralia = 0;
-    int wicketTeamAustralia = 0;
-    int overTeamAustralia = 0;
+      private   int scoreTeamAustralia = 0;
+      private   int wicketTeamAustralia = 0;
+      private   int overTeamAustralia = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayForIndia(0);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("scoreTeamIndia", scoreTeamIndia);
+        savedInstanceState.putInt("wicketTeamIndia", wicketTeamIndia);
+        savedInstanceState.putInt("overTeamIndia", overTeamIndia);
+        savedInstanceState.putInt("scoreTeamAustralia", scoreTeamAustralia);
+        savedInstanceState.putInt("wicketTeamAustralia", wicketTeamAustralia);
+        savedInstanceState.putInt("overTeamAustralia", overTeamAustralia);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreTeamIndia = savedInstanceState.getInt("scoreTeamIndia");
+        wicketTeamIndia = savedInstanceState.getInt("wicketTeamIndia");
+        overTeamIndia = savedInstanceState.getInt("overTeamIndia");
+        scoreTeamAustralia = savedInstanceState.getInt("scoreTeamAustralia");
+        wicketTeamAustralia = savedInstanceState.getInt("wicketTeamAustralia");
+        overTeamAustralia = savedInstanceState.getInt("overTeamAustralia");
+
+        displayForIndia(scoreTeamIndia);
+        displayForAustralia(scoreTeamAustralia);
+        displayWicketIndia(wicketTeamIndia);
+        displayWicketAustralia(wicketTeamAustralia);
+        displayOverIndia(overTeamIndia);
+        displayOverAustralia(overTeamAustralia);
+    }
+
 
     /**
      * Increase the score for India plus 3.
      */
-    public void addSixForInida (View v) {
+    public void addSixForIndia (View v) {
         scoreTeamIndia = scoreTeamIndia + 6;
         displayForIndia(scoreTeamIndia);
     }
@@ -78,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given score for India.
      */
-    public void displayForIndia(int score) {
+    private void displayForIndia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_india_score);
         scoreView.setText(String.valueOf(score));
     }
@@ -86,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given wicket for India.
      */
-    public void displayWicketIndia(int score) {
+    private void displayWicketIndia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_india_wickets);
         scoreView.setText(String.valueOf(score));
     }
@@ -94,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given over for India.
      */
-    public void displayOverIndia(int score) {
+    private void displayOverIndia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_india_over);
         scoreView.setText(String.valueOf(score));
     }
@@ -102,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given score for Australia.
      */
-    public void displayForAustralia(int score) {
+    private void displayForAustralia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_australia_score);
         scoreView.setText(String.valueOf(score));
     }
@@ -110,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given wicket for Australia.
      */
-    public void displayWicketAustralia(int score) {
+    private void displayWicketAustralia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_australia_wickets);
         scoreView.setText(String.valueOf(score));
     }
@@ -118,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given over for Australia.
      */
-    public void displayOverAustralia(int score) {
+    private void displayOverAustralia(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_australia_over);
         scoreView.setText(String.valueOf(score));
     }

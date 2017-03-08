@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cricket3"
     tools:context="com.example.android.cricketscorekeeper.MainActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:id="@+id/activity_main"
@@ -36,7 +42,7 @@
 
             <Button
                 style="@style/central_button_theme"
-                android:onClick="addSixForInida"
+                android:onClick="addSixForIndia"
                 android:text="@string/six_point" />
 
             <LinearLayout
@@ -143,3 +149,4 @@
         android:text="@string/Reset" />
 
 </RelativeLayout>
+</ScrollView>
